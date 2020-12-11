@@ -44,16 +44,16 @@ You are now an employee of the company, as a frontend engineer, your first missi
    <br/>Trigger __on button click then watch__
 5. __(OK)__ *(Optional)* Use one of the frontend tools to manage static files. For example, use __Webpack__ or __Bower__ to manage __bootstrap__ and __jQuery__. Describe what tool you use and how you setup.
 <br/>Use __npm__
-6. *(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
-<br/>XSS script injection
-Content is automatically escaped. That means in this template:
-```html
-<h1>{{ userProvidedString }}</h1>
-```
-if userProvidedString contained:
-```javascript
-'<script>alert("hi")</script>'
-```
+6. __(OK)__ *(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
+ <br/>XSS script injection
+ <br/>Content is automatically escaped. That means in this template:
+ ```html
+ <h1>{{ userProvidedString }}</h1>
+ ```
+ if userProvidedString contained:
+ ```javascript
+ '<script>alert("hi")</script>'
+ ```
 then it would be escaped to the following HTML:
 ```html
 &lt;script&gt;alert(&quot;hi&quot;)&lt;/script&gt;
