@@ -3,25 +3,21 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">{{ msg }}</a>
     </nav>
-    <!-- <div v-if="isLoading">Loading moive list...</div> -->
-
-    
-
-    <div  class="container">
+    <div class="container">
       <div class="text-center " v-if="isLoading">
-      <button class="btn " type="button" disabled>
-        <span
-          class="spinner-border "
-          style="width: 3rem; height: 3rem;"
-          role="status"
-          aria-hidden="true"
-        ></span>
-        <span style="font-size:30px;">
-        Loading moive list...
-        </span>
-      </button>
-    </div>
-   
+        <button class="btn " type="button" disabled>
+          <span
+            class="spinner-border "
+            style="width: 3rem; height: 3rem;"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          <span style="font-size:30px;">
+            Loading moive list...
+          </span>
+        </button>
+      </div>
+
       <form v-else>
         <div class="form-group">
           <label for="input-title-ch">Title in Chinese</label>
@@ -78,18 +74,18 @@
           />
         </ul>
       </form>
-     
+
       <!-- <ul id="list-movie" class="list-group">
         </ul> -->
     </div>
-    
   </body>
 </template>
 
 <script>
-import $ from "jquery";
+// import $ from "jquery";
+import axios from "axios";
 import MovieList from "./MovieList";
-import { cors, movie } from "../service/api";
+// import { cors, movie } from "../service/api";
 
 export default {
   name: "MyMovies",
@@ -157,11 +153,15 @@ export default {
     },
     infoQuery() {
       var vm = this;
-      $.getJSON(`${cors}${movie.List}`, function(data) {
-        vm.isLoading = false;
-        // console.log(data);
-        vm.movies_info = data;
-      });
+      axios
+        .get("/movie/list.php")
+        .then(function(response) {
+          vm.isLoading = false;
+          vm.movies_info = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     validateIntro() {
       if (this.intro.trim() == "") {

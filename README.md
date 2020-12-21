@@ -36,7 +36,6 @@ I use frontend tools __(Item 5)__ npm to manage bootstrap and jQuery. Only boots
 Vue version 2.6.12.
 3. __(OK)__ Use __Vue__ to perform API call in order to get movie data instead of loading local JSON file.
    * API Endpoint - https://hw-web-api.herokuapp.com/api/movie/list.php
-   Only this to call jQuery api, but I personally like to use __axios and vuex without jQuery API__, because vuex has a store like React-Redux
 4. __(OK)__ *(Optional)* Use __Vue__ to implement form validation. Make sure each textbox meet its requirement, otherwise show error message in __Red__ under it.  
    * __Title in Chinese__ - *Required*. String length must between 1 to 50.
    * __Title in English__ - *Required*. String length must between 1 to 100 and cannot include the symbols `$`, `%`, `^`, `&`, `*`.
@@ -44,8 +43,10 @@ Vue version 2.6.12.
    Trigger __on button click then watch__
 5. __(OK)__ *(Optional)* Use one of the frontend tools to manage static files. For example, use __Webpack__ or __Bower__ to manage __bootstrap__ and __jQuery__. Describe what tool you use and how you setup.
 use __npm__
-6. *(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
-XSS script injection
+6. __(OK)__*(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
+- CORS
+Config vue.config.js(webpack) to setting proxy to localhots/movie.
+- XSS script injection
 Content is automatically escaped. That means in this template:
 ```html
 <h1>{{ userProvidedString }}</h1>
