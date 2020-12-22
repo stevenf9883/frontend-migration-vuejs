@@ -1,4 +1,5 @@
 # Assignment - Migrate legacy frontend to Vue
+GCP Example: https://moviejs.du.r.appspot.com
 
 ## Environment
 
