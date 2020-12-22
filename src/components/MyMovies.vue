@@ -4,17 +4,15 @@
       <a class="navbar-brand" href="#">{{ msg }}</a>
     </nav>
     <div class="container">
-      <div class="text-center " v-if="isLoading">
-        <button class="btn " type="button" disabled>
+      <div class="text-center" v-if="isLoading">
+        <button class="btn" type="button" disabled>
           <span
-            class="spinner-border "
-            style="width: 3rem; height: 3rem;"
+            class="spinner-border"
+            style="width: 3rem; height: 3rem"
             role="status"
             aria-hidden="true"
           ></span>
-          <span style="font-size:30px;">
-            Loading moive list...
-          </span>
+          <span style="font-size: 30px"> Loading moive list... </span>
         </button>
       </div>
 
@@ -85,7 +83,7 @@
 // import $ from "jquery";
 import axios from "axios";
 import MovieList from "./MovieList";
-// import { cors, movie } from "../service/api";
+import { cors, movie } from "../service/api";
 
 export default {
   name: "MyMovies",
@@ -116,14 +114,14 @@ export default {
     this.clean_form_data();
   },
   watch: {
-    title_ch: function() {
+    title_ch: function () {
       this.validateTitle_ch();
     },
-    title_eng: function() {
+    title_eng: function () {
       // var isText = /^[a-zA-Z0-9]+$/;
       this.validateTitle_eng();
     },
-    intro: function() {
+    intro: function () {
       this.validateIntro();
     },
   },
@@ -153,13 +151,12 @@ export default {
     },
     infoQuery() {
       var vm = this;
-      axios
-        .get("/movie/list.php")
-        .then(function(response) {
+      axios.get(`${cors}${movie.List}`)
+        .then(function (response) {
           vm.isLoading = false;
           vm.movies_info = response.data;
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     },

@@ -45,7 +45,7 @@ Vue version 2.6.12.
 use __npm__
 6. __(OK)__*(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
 - CORS
-Config vue.config.js(webpack) to setting proxy to localhots/movie.
+Use [cors-anywhere](https://cors-anywhere.herokuapp.com/ "cors-anywhere")
 - XSS script injection
 Content is automatically escaped. That means in this template:
 ```html
