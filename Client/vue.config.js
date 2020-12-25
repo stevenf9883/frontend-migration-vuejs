@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/movieJS/",
+  // publicPath: "/",
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
       args[0].title = "My Movies";

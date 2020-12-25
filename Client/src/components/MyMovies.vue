@@ -83,7 +83,7 @@
 // import $ from "jquery";
 import axios from "axios";
 import MovieList from "./MovieList";
-import { cors, movie } from "../service/api";
+import { movie } from "../service/api";
 
 export default {
   name: "MyMovies",
@@ -151,7 +151,8 @@ export default {
     },
     infoQuery() {
       var vm = this;
-      axios.get(`${cors}${movie.List}`)
+      // console.log(movie.List);
+      axios.get(movie.List)
         .then(function (response) {
           vm.isLoading = false;
           vm.movies_info = response.data;

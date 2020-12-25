@@ -1,5 +1,4 @@
 # Assignment - Migrate legacy frontend to Vue
-GCP Example: https://moviejs.du.r.appspot.com
 
 ## Environment
 
@@ -46,7 +45,7 @@ Vue version 2.6.12.
 use __npm__
 6. __(OK)__*(Optional)* Find any weakness/risk in this application, describe the weakness/risk and how you fix it.
 - CORS
-Use [cors-anywhere](https://cors-anywhere.herokuapp.com/ "cors-anywhere")
+Add Proxy Server(Express) setting proxy to localhots/api/movie/list.
 - XSS script injection
 Content is automatically escaped. That means in this template:
 ```html
