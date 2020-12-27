@@ -1,5 +1,6 @@
 # Assignment - Migrate legacy frontend to Vue
 
+GCP Example: https://moviejs.du.r.appspot.com
 ## Environment
 
 - Node.js: 12.13.1
